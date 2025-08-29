@@ -1,10 +1,11 @@
+import csv
 
 def save_participant(path, participant_dict):
     """
     Append participant's details to a csv file, writes a header (Name, Age, Phone and Track) if it does not exist
     
     """
-    with open(path, 'r+', encoding="utf-8") as f:
+    with open(path, 'a+', encoding="utf-8") as f:
         line = f.readlines()
         header = []
         for (key, values) in participant_dict.items():
