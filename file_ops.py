@@ -20,4 +20,15 @@ def save_participant(path, participant_dict):
         f.write('\n')
     
 def load_participants(path):
-    print(path)
+    with open(path, "r", encoding="utf-8") as f:
+        reader = csv.reader(f)
+
+        user_count = 0
+
+        for row_number, row in enumerate(reader):
+            if row_number == 0:
+                user_count = 0
+            else:
+                user_count += 1
+
+        print(f"We have {user_count} users in the file!")
